@@ -3,6 +3,27 @@ const searchButton = document.getElementById('search-button');
 const resultsContainer = document.getElementById('results-container');
 const genreButtons = document.querySelectorAll('.genre-button');
 const suggestionsList = document.getElementById('suggestions-list');
+const quoteElement = document.getElementById('quote');
+
+const quotes = [
+  "“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.” — Dr. Seuss",
+  "“A room without books is like a body without a soul.” — Cicero",
+  "“You can never get a cup of tea large enough or a book long enough to suit me.” — C.S. Lewis",
+  "“That's the thing about books. They let you travel without moving your feet.” — Jhumpa Lahiri",
+  "“If you don’t like to read, you haven’t found the right book.” — J.K. Rowling",
+  "“There is no friend as loyal as a book.” — Ernest Hemingway",
+  "“A book is a dream you hold in your hand.” — Neil Gaiman",
+  "“So many books, so little time.” — Frank Zappa",
+  "“I cannot live without books.” — Thomas Jefferson",
+  "“Once you learn to read, you will be forever free.” — Frederick Douglass"
+];
+
+function getRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
+}
+
+quoteElement.textContent = getRandomQuote(); // Set quote on page load
 
 searchButton.addEventListener('click', () => {
   const searchTerm = searchInput.value;
